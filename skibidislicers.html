@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        #myInput {
+            padding: 8px;
+            margin-top: 20px;
+            width: 300px;
+            font-size: 16px;
+        }
+        #myButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Event Listeners</h1>
+
+    <button id="myButton">Click Me!</button>
+    
+    <p>Type something in the input box:</p>
+    <input type="text" id="myInput" placeholder="Type here..." />
+
+    <p id="result"></p> <!-- Where the key press logs will be displayed -->
+
+    <script>
+        // Button Click Event Listener
+        const button = document.getElementById('myButton');
+        
+        function onClickButton() {
+            alert('Button was clicked!');
+        }
+        
+        button.addEventListener('click', onClickButton);
+
+        // Key Press Event Listener
+        const input = document.getElementById('myInput');
+        const result = document.getElementById('result');
+        
+        function onKeyPress(event) {
+            // Display the pressed key in the result paragraph
+            result.textContent = `You pressed: ${event.key}`;
+        }
+        
+        input.addEventListener('keydown', onKeyPress);
+    </script>
+
+</body>
+</html>
